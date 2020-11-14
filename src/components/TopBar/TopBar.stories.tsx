@@ -1,12 +1,12 @@
 import { Home, Settings } from '@material-ui/icons';
-import type { Story } from '@storybook/react/types-6-0';
+import type { Story, Meta } from '@storybook/react/types-6-0';
 import React from 'react';
 import TopBar, { TopBarProps } from './index';
 
 export default {
   component: TopBar,
   title: 'Top Bar',
-};
+} as Meta;
 
 const Template: Story<TopBarProps> = (args) => <TopBar {...args} />;
 
