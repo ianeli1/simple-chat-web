@@ -1,0 +1,62 @@
+query GetInvites($id: Float!) {
+  invites(serverId: $id) {
+    invites {
+      id
+      createdAt
+      expire
+      owner {
+        id
+        name
+      }
+      author {
+        id
+        name
+      }
+    }
+    error {
+      code
+      message
+    }
+  }
+}
+
+query GetServer($id: Float!) {
+  server(serverId: $id) {
+    server {
+      id
+      name
+      icon
+      updatedAt
+      author {
+        id
+        name
+        icon
+      }
+      members {
+        id
+        name
+        icon
+      }
+      channels {
+        id
+        name
+        updatedAt
+      }
+      emotes {
+        id
+        name
+        image
+        createdAt
+      }
+      invites {
+        id
+        expire
+        createdAt
+      }
+    }
+    error {
+      code
+      message
+    }
+  }
+}

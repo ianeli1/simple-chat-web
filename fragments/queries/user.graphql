@@ -1,0 +1,89 @@
+query Me {
+  me {
+    user {
+      id
+      name
+      icon
+      createdAt
+      servers {
+        id
+        name
+        icon
+        updatedAt
+        channels {
+          id
+          name
+          updatedAt
+        }
+      }
+      friendRequests {
+        id
+        name
+      }
+      friends {
+        id
+        name
+      }
+    }
+    error {
+      code
+      message
+    }
+  }
+}
+
+query User($id: String!) {
+  user(id: $id) {
+    user {
+      id
+      name
+      icon
+      birthday
+      createdAt
+      isFriend
+      sentFriendRequest
+    }
+    error {
+      code
+      message
+    }
+  }
+}
+
+query Login($token: String!) {
+  login(token: $token) {
+    id
+    name
+    servers {
+      id
+      name
+    }
+    friends {
+      id
+      name
+    }
+    friendRequests {
+      id
+      name
+    }
+  }
+}
+
+query myEmotes {
+  myEmotes {
+    emotes {
+      id
+      image
+      name
+      owner {
+        id
+        name
+        icon
+      }
+    }
+    error {
+      code
+      message
+    }
+  }
+}
