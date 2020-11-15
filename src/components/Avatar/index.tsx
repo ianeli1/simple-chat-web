@@ -16,7 +16,7 @@ export const Avatar: FC<AvatarProps> = (props: AvatarProps) => {
   return (
     <div
       onClick={props.onClick}
-      className="rounded-full h-16 w-16 flex items-center justify-center overflow-hidden bg-white"
+      className="rounded-full h-16 w-16 flex flex-shrink-0 items-center justify-center overflow-hidden bg-white"
       style={{ backgroundColor: props.color ?? 'white' }}
     >
       {props.icon ? (
