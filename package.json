@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "npm run watch:css && snowpack dev",
+    "start": "snowpack dev",
     "build": "npm run watch:css && snowpack build",
     "test": "web-test-runner \"src/**/*.test.tsx\"",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
@@ -11,8 +11,10 @@
     "gql": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
+    "@apollo/client": "^3.2.5",
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
+    "firebase": "^8.0.2",
     "graphql": "^15.4.0",
     "react": "^17.0.0",
     "react-contenteditable": "^3.3.5",
@@ -21,6 +23,9 @@
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "@graphql-codegen/cli": "1.19.1",
+    "@graphql-codegen/typescript": "1.17.11",
+    "@graphql-codegen/typescript-operations": "1.17.9",
+    "@graphql-codegen/typescript-react-apollo": "2.1.1",
     "@snowpack/plugin-dotenv": "^2.0.4",
     "@snowpack/plugin-react-refresh": "^2.3.6",
     "@snowpack/plugin-typescript": "^1.1.0",
@@ -34,6 +39,7 @@
     "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.8",
     "@types/snowpack-env": "^2.3.0",
+    "@types/uuid": "^8.3.0",
     "@web/test-runner": "^0.9.7",
     "autoprefixer": "^10.0.1",
     "babel-loader": "^8.1.0",
@@ -43,9 +49,6 @@
     "react-is": "^17.0.1",
     "snowpack": "^2.17.0",
     "tailwindcss": "^1.9.6",
-    "typescript": "^4.0.0",
-    "@graphql-codegen/typescript-operations": "1.17.9",
-    "@graphql-codegen/typescript": "1.17.11",
-    "@graphql-codegen/typescript-react-apollo": "2.1.1"
+    "typescript": "^4.0.0"
   }
 }
