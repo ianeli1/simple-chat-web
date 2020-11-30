@@ -1,18 +1,20 @@
 import React from 'react';
 import Avatar from '../Avatar';
 
-export interface AvatarScrollerProps {
+export interface AvatarScrollerProps<T extends number | string> {
   orientation?: 'v' | 'h';
-  selected?: AvatarScrollerProps['elements'][0]['key'];
+  selected?: AvatarScrollerProps<T>['elements'][0]['key'];
   elements: {
-    key: string;
+    key: T;
     icon?: string;
     alt: string;
   }[];
-  onAvatarClick?: (key: AvatarScrollerProps['elements'][0]['key']) => void;
+  onAvatarClick?: (key: T) => void;
 }
 
-export default function AvatarScroller(props: AvatarScrollerProps) {
+export default function AvatarScroller<T extends number | string>(
+  props: AvatarScrollerProps<T>,
+) {
   const { orientation = 'v' } = props;
   return (
     <div
