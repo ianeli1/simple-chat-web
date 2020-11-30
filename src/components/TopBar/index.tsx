@@ -8,7 +8,7 @@ export interface TopBarProps {
   left?: React.ReactNode;
 
   /**React Element to be drawn at the end of the nav */
-  right: React.ReactNode;
+  right?: React.ReactNode;
 }
 
 export default function TopBar(props: TopBarProps) {
