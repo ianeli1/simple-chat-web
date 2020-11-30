@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import '../../assets/main.css';
-import type { GetChannelQuery } from '../../../generated/graphql';
+import type { GetChannelQuery } from '../../generated/graphql';
 import Avatar from '../Avatar';
 
 export interface MessageProps {
