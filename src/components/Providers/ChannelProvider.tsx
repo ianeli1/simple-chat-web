@@ -1,15 +1,15 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useEffect, useState } from 'react';
 import {
   GetChannelQuery,
   useGetChannelQuery,
   NewMessageDocument,
-} from "../../generated/graphql";
+} from '../../generated/graphql';
 
 interface ChannelContext {
   currentChannel: number | null;
   setCurrentChannel: (channel: number | null) => void;
-  channel: Exclude<GetChannelQuery["channel"]["channel"], undefined>;
-  error: Exclude<GetChannelQuery["channel"]["error"], undefined>;
+  channel: Exclude<GetChannelQuery['channel']['channel'], undefined>;
+  error: Exclude<GetChannelQuery['channel']['error'], undefined>;
 }
 
 export const channelContext = createContext<ChannelContext>(undefined!);

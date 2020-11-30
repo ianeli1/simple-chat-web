@@ -1,17 +1,17 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState } from 'react';
 import {
   Server,
   useGetServerQuery,
   GetServerQuery,
-} from "../../generated/graphql";
+} from '../../generated/graphql';
 
 interface ServerContext {
   /**The id of the current server */
   currentServer: number | null;
   setCurrentServer: (serverId: number) => void;
   /**The current server */
-  server: Exclude<GetServerQuery["server"]["server"], undefined>;
-  error: Exclude<GetServerQuery["server"]["error"], undefined>;
+  server: Exclude<GetServerQuery['server']['server'], undefined>;
+  error: Exclude<GetServerQuery['server']['error'], undefined>;
   loading: boolean;
 }
 

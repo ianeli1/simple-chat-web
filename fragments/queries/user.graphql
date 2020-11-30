@@ -52,19 +52,25 @@ query User($id: String!) {
 
 query Login($token: String!) {
   login(token: $token) {
-    id
-    name
-    servers {
+    user {
       id
       name
+      servers {
+        id
+        name
+      }
+      friends {
+        id
+        name
+      }
+      friendRequests {
+        id
+        name
+      }
     }
-    friends {
-      id
-      name
-    }
-    friendRequests {
-      id
-      name
+    error {
+      code
+      message
     }
   }
 }

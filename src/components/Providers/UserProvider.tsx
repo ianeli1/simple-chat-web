@@ -1,20 +1,20 @@
-import React, { createContext } from "react";
+import React, { createContext } from 'react';
 import {
   useMeQuery,
   MeQuery,
   useMyEmotesQuery,
   MyEmotesQuery,
-} from "../../generated/graphql";
-import { ApolloQueryResult } from "@apollo/client";
+} from '../../generated/graphql';
+import type { ApolloQueryResult } from '@apollo/client';
 
 export const userContext = createContext<{
-  user: Exclude<MeQuery["me"]["user"], undefined>;
-  error: Exclude<MeQuery["me"]["error"], undefined>;
+  user: Exclude<MeQuery['me']['user'], undefined>;
+  error: Exclude<MeQuery['me']['error'], undefined>;
   loading: boolean;
   refetch(): Promise<ApolloQueryResult<MeQuery>>;
   emotes: {
-    list: Exclude<MyEmotesQuery["myEmotes"]["emotes"], undefined>;
-    error: Exclude<MyEmotesQuery["myEmotes"]["error"], undefined>;
+    list: Exclude<MyEmotesQuery['myEmotes']['emotes'], undefined>;
+    error: Exclude<MyEmotesQuery['myEmotes']['error'], undefined>;
     refetch(): Promise<ApolloQueryResult<MyEmotesQuery>>;
   };
 }>(undefined!);
