@@ -1,15 +1,23 @@
 import '../../assets/main.css';
 import React from 'react';
 
-export interface RectangleScrollerProps {
-  elements: RectangleProps[];
+export interface RectangleScrollerProps<T extends string | number> {
+  elements: (Omit<RectangleProps, "onClick"> & { key: T })[];
+  onClick?: (key: T) => void;
+  selected?: T;
 }
 
-export default function RectangleScroller(props: RectangleScrollerProps) {
+export default function RectangleScroller<T extends string | number>(
+  props: RectangleScrollerProps<T>,
+) {
   return (
     <div className="h-full w-full overflow-y-auto overflow-x-hidden p-2">
-      {props.elements?.map((i) => (
-        <Rectangle {...i} />
+      {props.elements?.map((i, index) => (
+        <Rectangle
+          onClick={() => props.onClick && props.onClick(i.key)}
+          selected={i.key === props.selected}
+          {...i}
+        />
       ))}
     </div>
   );
