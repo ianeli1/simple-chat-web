@@ -10,6 +10,7 @@ import { DialogContext } from '../components/Providers/DialogProvider';
 import { userContext } from '../components/Providers/UserProvider';
 import { serverContext } from '../components/Providers/ServerProvider';
 import { channelContext } from '../components/Providers/ChannelProvider';
+import { ChatScreen } from './ChatScreen';
 
 export default function Main() {
   const { login } = useContext(DialogContext);
@@ -69,7 +70,9 @@ export default function Main() {
       />
       <div className="flex pt-12 h-full w-full box-border grid-cols-2">
         <Sidebar screens={[ChannelMenu]} />
-        <section className="flex-grow bg-pink-700 h-full"></section>
+        <section className="flex-grow bg-black h-full">
+          <ChatScreen />
+        </section>
       </div>
     </main>
   );
