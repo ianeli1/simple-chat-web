@@ -18,7 +18,7 @@ export interface TextBoxProps {
 export default function TextBox(props: TextBoxProps) {
   const text = useRef(props.value);
   return (
-    <div className="flex h-12 w-full bg-teal-800 rounded m-2 p-1 overflow-x-hidden items-center">
+    <div className="flex h-12 w-full bg-teal-800 rounded p-1 overflow-x-hidden items-center">
       {props.left && <div>{props.left}</div>}
       <ContentEditable
         html={text.current}

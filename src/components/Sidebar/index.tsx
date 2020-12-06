@@ -18,6 +18,7 @@ export default function Sidebar(props: SidebarProps) {
         <div className="block h-full overflow-hidden">
           {props.screens.map(({ element }, i) => (
             <div
+              key={i}
               ref={(el) => (coolRef.current[i] = el!)}
               className="w-64 h-full overflow-auto"
             >
