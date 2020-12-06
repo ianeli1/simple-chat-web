@@ -11,7 +11,7 @@ export const userContext = createContext<{
   user: Exclude<MeQuery['me']['user'], undefined>;
   error: Exclude<MeQuery['me']['error'], undefined>;
   loading: boolean;
-  refetch(): Promise<ApolloQueryResult<MeQuery>>;
+  refetch: ReturnType<typeof useMeQuery>['refetch'];
   emotes: {
     list: Exclude<MyEmotesQuery['myEmotes']['emotes'], undefined>;
     error: Exclude<MyEmotesQuery['myEmotes']['error'], undefined>;
@@ -29,7 +29,11 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
         user: data?.me.user ?? null,
         error: data?.me.error ?? null,
         loading,
-        refetch,
+        refetch: async (k) => {
+          const result = await refetch(k);
+          console.log({ result });
+          return result;
+        },
         emotes: {
           list: emoteData?.myEmotes.emotes ?? null,
           error: emoteData?.myEmotes.error ?? null,
