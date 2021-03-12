@@ -9,3 +9,4 @@ secretKey.ts
 yarn.lock
 src/generated/graphql.tsx
 yarn.lock
+.env

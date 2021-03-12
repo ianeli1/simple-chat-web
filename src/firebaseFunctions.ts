@@ -1,8 +1,10 @@
 import firebase from 'firebase';
 import uuid from 'uuid';
-import { firebaseConfig } from './secretKey';
+import { config } from 'dotenv';
 
-firebase.initializeApp(firebaseConfig);
+config();
+
+firebase.initializeApp(JSON.parse(process.env.FIREBASE_CONFIG!));
 const auth = firebase.auth();
 const storage = firebase.storage();
 
@@ -52,7 +54,7 @@ export async function uploadImage(
     const response = await fetch(uri);
     const blob = await response.blob();
     const ref = storage.ref().child(uuid.v4());
-    await new Promise((resolve, reject) => {
+    await new Promise<void>((resolve, reject) => {
       ref.put(blob).on(
         'state_changed',
         progress &&

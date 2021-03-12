@@ -17,7 +17,7 @@ export default {
   ],
 } as Meta;
 
-const Template: Story<RectangleScrollerProps> = (a) => (
+const Template: Story<RectangleScrollerProps<string>> = (a) => (
   <RectangleScroller {...a} />
 );
 
@@ -36,12 +36,12 @@ const epicButtons = (
 export const Default = Template.bind({});
 Default.args = {
   elements: [
-    { title: 'Test1' },
-    { title: 'Test1', selected: true },
-    { title: 'Test1' },
-    { title: 'Test1' },
-    { title: 'Test1' },
-    { title: 'Test1' },
+    { title: 'Test1', key: '1' },
+    { title: 'Test1', selected: true, key: '2' },
+    { title: 'Test1', key: '3' },
+    { title: 'Test1', key: '4' },
+    { title: 'Test1', key: '5' },
+    { title: 'Test1', key: '6' },
   ],
 };
 

@@ -7,11 +7,11 @@ export default {
   title: 'AvatarScroller',
 };
 
-const Template: Story<AvatarScrollerProps> = (args) => (
+const Template: Story<AvatarScrollerProps<string>> = (args) => (
   <AvatarScroller {...args} />
 );
 
-const dummyServers: AvatarScrollerProps['elements'] = [
+const dummyServers: AvatarScrollerProps<string>['elements'] = [
   { key: '1', alt: 'Hello' },
   { key: '2', alt: 'Bello' },
   { key: '3', alt: 'Cello' },
