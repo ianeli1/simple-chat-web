@@ -14,21 +14,18 @@ import { DialogContextProvider } from './components/Providers/DialogProvider';
 import { UserProvider } from './components/Providers/UserProvider';
 import ServerProvider from './components/Providers/ServerProvider';
 import { ChannelProvider } from './components/Providers/ChannelProvider';
-import { config } from 'dotenv';
-
-config();
 
 interface AppProps {}
 
 const wsLink = new WebSocketLink({
-  uri: process.env.WS_ENDPOINT!,
+  uri: import.meta.env.SNOWPACK_PUBLIC_WS_ENDPOINT!,
   options: {
     reconnect: true,
   },
 });
 
 const httpLink = new HttpLink({
-  uri: process.env.GQL_ENDPOINT!,
+  uri: import.meta.env.SNOWPACK_PUBLIC_GQL_ENDPOINT!,
   credentials: 'include',
   fetchOptions: {
     mode: 'no-cors',

@@ -1,10 +1,8 @@
 import firebase from 'firebase';
 import uuid from 'uuid';
-import { config } from 'dotenv';
-
-config();
-
-firebase.initializeApp(JSON.parse(process.env.FIREBASE_CONFIG!));
+firebase.initializeApp(
+  JSON.parse(import.meta.env.SNOWPACK_PUBLIC_FIREBASE_CONFIG!),
+);
 const auth = firebase.auth();
 const storage = firebase.storage();
 
