@@ -27,9 +27,6 @@ const wsLink = new WebSocketLink({
 const httpLink = new HttpLink({
   uri: import.meta.env.SNOWPACK_PUBLIC_GQL_ENDPOINT!,
   credentials: 'include',
-  fetchOptions: {
-    mode: 'no-cors',
-  },
 });
 
 const splitLink = split(
